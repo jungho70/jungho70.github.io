@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>코드 아카이브</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1f4e79;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #1f4e79;
+    }
+
+    pre {
+      background: #222;
+      color: #f4f4f4;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+
+    a {
+      color: #1f4e79;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>코드 아카이브</h1>
+  <p>탐구 과정에서 사용한 파이썬 코드 기록</p>
+</header>
+
+<section>
+  <h2>1. 동전 던지기 기본 시뮬레이션</h2>
+  <pre><code>import random
+
+heads = 0
+n = 1000
+
+for i in range(n):
+    if random.random() < 0.5:
+        heads += 1
+
+print("앞면 횟수:", heads)
+print("앞면 비율:", heads / n)</code></pre>
+</section>
+
+<section>
+  <h2>2. 시행 횟수별 비교 코드</h2>
+  <pre><code>import random
+
+trials = [10, 100, 1000]
+
+for n in trials:
+    heads = 0
+
+    for i in range(n):
+        if random.random() < 0.5:
+            heads += 1
+
+    print(n, "회 시행:", heads / n)</code></pre>
+</section>
+
+<section>
+  <h2>3. 그래프 제작 예정 코드</h2>
+  <pre><code>import random
+import matplotlib.pyplot as plt
+
+heads = 0
+ratios = []
+
+for i in range(1, 1001):
+    if random.random() < 0.5:
+        heads += 1
+    ratios.append(heads / i)
+
+plt.plot(ratios)
+plt.axhline(y=0.5, linestyle="--")
+plt.xlabel("Number of trials")
+plt.ylabel("Ratio of heads")
+plt.title("Coin Toss Simulation")
+plt.show()</code></pre>
+</section>
+
+<section>
+  <h2>4. 코드 설명</h2>
+  <p>
+    이 코드는 동전 던지기를 컴퓨터로 반복 실행하여 앞면이 나오는 비율을 계산한다.
+    시행 횟수가 증가할수록 앞면 비율이 0.5에 가까워지는지 확인할 수 있다.
+  </p>
+</section>
+
+<section>
+  <a href="index.html">← 메인 화면으로 돌아가기</a>
+</section>
+
+</body>
+</html>
