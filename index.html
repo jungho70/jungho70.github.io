@@ -2,8 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Probability Lab</title>
-
+  <title>Probability Archive</title>
   <style>
     body {
       margin: 0;
@@ -16,18 +15,8 @@
     header {
       background-color: #1f4e79;
       color: white;
-      padding: 60px 20px;
+      padding: 70px 20px;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 18px;
     }
 
     nav {
@@ -35,8 +24,6 @@
       padding: 15px;
       text-align: center;
       border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
     }
 
     nav a {
@@ -44,10 +31,6 @@
       text-decoration: none;
       color: #1f4e79;
       font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #ff6600;
     }
 
     section {
@@ -63,17 +46,18 @@
       color: #1f4e79;
     }
 
-    .highlight {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 10px;
+    .card {
+      background-color: #eef4fb;
+      padding: 20px;
+      border-left: 5px solid #1f4e79;
+      border-radius: 8px;
+      margin-top: 20px;
     }
 
-    pre {
-      background-color: #eee;
-      padding: 15px;
-      border-radius: 8px;
-      overflow-x: auto;
+    .card a {
+      color: #1f4e79;
+      font-weight: bold;
+      text-decoration: none;
     }
 
     footer {
@@ -87,75 +71,47 @@
 <body>
 
 <header>
-  <h1>Probability Lab</h1>
-  <p>코드로 탐구하는 확률과 랜덤성</p>
+  <h1>Probability Archive</h1>
+  <p>논문을 읽고, 확률과 랜덤성을 코드로 탐구하는 기록 공간</p>
 </header>
 
 <nav>
-  <a href="#intro">Intro</a>
-  <a href="#question">Question</a>
-  <a href="#method">Method</a>
-  <a href="#experiment">Experiment</a>
-  <a href="#analysis">Analysis</a>
-  <a href="#code">Code</a>
+  <a href="#about">About</a>
+  <a href="#research">Research</a>
+  <a href="#plan">Plan</a>
 </nav>
 
-<section id="intro">
+<section id="about">
   <h2>사이트 소개</h2>
   <p>
-    이 사이트는 확률과 랜덤성을 코드로 실험하고 그 결과를 분석하는 탐구 공간입니다.
+    이 사이트는 확률과 랜덤성에 관한 논문 및 학술 자료를 읽고,
+    그 내용을 정리한 뒤 관련된 코드 실험을 직접 진행하며 기록하는 공간입니다.
   </p>
 </section>
 
-<section id="question">
-  <h2>핵심 질문</h2>
-  <p class="highlight">
-    랜덤은 정말 공정할까? 1000번 반복하면 결과는 50%로 수렴할까?
-  </p>
+<section id="research">
+  <h2>탐구 기록</h2>
+
+  <div class="card">
+    <h3>큰 수의 법칙과 동전 던지기 시뮬레이션</h3>
+    <p>
+      큰 수의 법칙을 바탕으로, 시행 횟수가 많아질수록 확률이 이론값에 가까워지는지
+      파이썬 시뮬레이션으로 확인합니다.
+    </p>
+    <a href="law-of-large-numbers.html">탐구 기록 보기 →</a>
+  </div>
 </section>
 
-<section id="method">
-  <h2>탐구 방법</h2>
+<section id="plan">
+  <h2>앞으로의 계획</h2>
   <p>
-    파이썬을 이용해 동전 던지기 시뮬레이션을 반복 실행하고,
-    시행 횟수에 따른 확률 변화를 분석할 예정입니다.
+    논문 내용을 정리한 뒤, 파이썬을 이용해 동전 던지기와 주사위 실험을 진행하고,
+    결과를 그래프로 시각화하여 분석할 예정입니다.
   </p>
-</section>
-
-<section id="experiment">
-  <h2>실험 기록</h2>
-  <p>
-    동전 던지기 실험을 10번, 100번, 1000번으로 나누어 진행하고,
-    각 경우에서 앞면이 나오는 비율을 비교할 예정입니다.
-  </p>
-</section>
-
-<section id="analysis">
-  <h2>분석</h2>
-  <p>
-    실험 결과를 통해 시행 횟수가 많아질수록 확률이 일정한 값으로
-    수렴하는지를 확인할 것입니다.
-  </p>
-</section>
-
-<section id="code">
-  <h2>코드</h2>
-  <pre><code>
-import random
-
-heads = 0
-n = 1000
-
-for i in range(n):
-    if random.random() < 0.5:
-        heads += 1
-
-print("앞면 비율:", heads/n)
-  </code></pre>
 </section>
 
 <footer>
-  <p>© 2026 Probability Lab</p>
+  <p>© 2026 Probability Archive</p>
 </footer>
 
 </body>
