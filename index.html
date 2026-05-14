@@ -7,23 +7,35 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f5f7fb;
+      background: #f4f7fb;
       color: #222;
       line-height: 1.6;
     }
 
     header {
-      background-color: #1f4e79;
+      background: linear-gradient(135deg, #173b63, #2f80ed);
       color: white;
-      padding: 70px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
 
+    header h1 {
+      font-size: 46px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 12px;
+    }
+
     nav {
-      background-color: white;
+      background: white;
       padding: 15px;
       text-align: center;
       border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
     }
 
     nav a {
@@ -34,24 +46,35 @@
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       padding: 30px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     h2 {
       color: #1f4e79;
     }
 
+    .question {
+      font-size: 26px;
+      font-weight: bold;
+      color: #173b63;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
     .card {
-      background-color: #eef4fb;
-      padding: 20px;
-      border-left: 5px solid #1f4e79;
-      border-radius: 8px;
-      margin-top: 20px;
+      background: #eef5ff;
+      padding: 22px;
+      border-radius: 14px;
+      border-left: 6px solid #2f80ed;
     }
 
     .card a {
@@ -60,9 +83,23 @@
       text-decoration: none;
     }
 
+    .timeline {
+      border-left: 4px solid #2f80ed;
+      padding-left: 20px;
+    }
+
+    .placeholder {
+      border: 2px dashed #9bbce0;
+      background: #f8fbff;
+      padding: 30px;
+      text-align: center;
+      border-radius: 12px;
+      color: #555;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       color: #777;
     }
   </style>
@@ -72,46 +109,75 @@
 
 <header>
   <h1>Probability Archive</h1>
-  <p>논문을 읽고, 확률과 랜덤성을 코드로 탐구하는 기록 공간</p>
+  <p>논문을 읽고, 확률과 랜덤성을 데이터와 코드로 탐구하는 기록 공간</p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
+  <a href="#intro">Intro</a>
+  <a href="#question">Question</a>
+  <a href="#pages">Pages</a>
   <a href="#plan">Plan</a>
 </nav>
 
-<section id="about">
+<section id="intro">
   <h2>사이트 소개</h2>
   <p>
-    이 사이트는 확률과 랜덤성에 관한 논문 및 학술 자료를 읽고,
-    그 내용을 정리한 뒤 관련된 코드 실험을 직접 진행하며 기록하는 공간입니다.
+    이 사이트는 확률과 랜덤성에 관한 논문과 학술 자료를 읽고,
+    그 내용을 나의 언어로 정리한 뒤, 추가적으로 파이썬 시뮬레이션을 통해
+    직접 확인해보는 탐구 기록 사이트입니다.
   </p>
 </section>
 
-<section id="research">
-  <h2>탐구 기록</h2>
+<section id="question">
+  <h2>핵심 질문</h2>
+  <p class="question">
+    확률은 단순한 계산일까, 아니면 반복되는 데이터 속에서 발견되는 패턴일까?
+  </p>
+</section>
 
-  <div class="card">
-    <h3>큰 수의 법칙과 동전 던지기 시뮬레이션</h3>
-    <p>
-      큰 수의 법칙을 바탕으로, 시행 횟수가 많아질수록 확률이 이론값에 가까워지는지
-      파이썬 시뮬레이션으로 확인합니다.
-    </p>
-    <a href="law-of-large-numbers.html">탐구 기록 보기 →</a>
+<section id="pages">
+  <h2>탐구 페이지</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>논문 정리</h3>
+      <p>큰 수의 법칙과 확률 개념을 다룬 자료를 읽고 핵심 내용을 정리합니다.</p>
+      <a href="paper-review.html">논문 정리 페이지 →</a>
+    </div>
+
+    <div class="card">
+      <h3>직접 탐구</h3>
+      <p>동전 던지기 시뮬레이션을 통해 시행 횟수와 확률 수렴의 관계를 관찰합니다.</p>
+      <a href="experiment.html">실험 기록 페이지 →</a>
+    </div>
+
+    <div class="card">
+      <h3>코드 아카이브</h3>
+      <p>탐구 과정에서 사용한 파이썬 코드와 그래프 제작 코드를 기록합니다.</p>
+      <a href="code.html">코드 페이지 →</a>
+    </div>
   </div>
 </section>
 
 <section id="plan">
-  <h2>앞으로의 계획</h2>
-  <p>
-    논문 내용을 정리한 뒤, 파이썬을 이용해 동전 던지기와 주사위 실험을 진행하고,
-    결과를 그래프로 시각화하여 분석할 예정입니다.
-  </p>
+  <h2>진행 계획</h2>
+  <div class="timeline">
+    <p><b>1단계:</b> 큰 수의 법칙 관련 자료 읽기</p>
+    <p><b>2단계:</b> 논문 내용을 내 언어로 정리하기</p>
+    <p><b>3단계:</b> 파이썬으로 동전 던지기 실험 구현하기</p>
+    <p><b>4단계:</b> 결과를 그래프로 시각화하기</p>
+    <p><b>5단계:</b> 이론과 실험 결과 비교 분석하기</p>
+  </div>
+</section>
+
+<section>
+  <h2>그래프 미리보기 공간</h2>
+  <div class="placeholder">
+    앞으로 동전 던지기 실험 결과 그래프가 들어갈 공간입니다.
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Probability Archive</p>
+  <p>© 2026 Probability Archive | 정정호</p>
 </footer>
 
 </body>
